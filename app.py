@@ -1,5 +1,5 @@
 #从flask包中导入Flask类
-from flask import Flask
+from flask import Flask,render_template
 
 #使用Flask类创建一个app对象
 #__name__：代表当前app.py模块
@@ -7,24 +7,22 @@ from flask import Flask
 #2.对于寻找模板文件，有一个相对路径
 app=Flask(__name__)
 
-#创建一个路由和视图函数的映射
+class User:
+    def __init__(self,username,email):
+        self.username=username
+        self.email=email
 @app.route('/')
-def hello_world():
-    return 'Hello 中国！'
+def show_index():
+    person={
+        "username":"cjp",
+        "email":"xx@qq.com"
+    }
+    return render_template('index.html',person=person)
 
-'''
-1.debug模式：代码改动不需要重新运行代码就可以显示
-    app.run(debug=True)
-    改动后ctrl+s，浏览器刷新
-
-2.修改host：
-    让其他电脑能访问到我电脑上的flask项目
-    app.host(host='0.0.0.0')
-    
-3.修改端口号
-    app.host(port=1234)
-'''
-
+@app.route("/test_report/<report_id>")
+def test_report(report_id):
+    user=User(username="cjp666",email="xx@qq.com")
+    return render_template("test_report.html",report_id=report_id,user=user)
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0',port=1234)
