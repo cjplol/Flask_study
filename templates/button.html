@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>按钮学习</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/button.css') }}">
+    <script src="{{ url_for('static',filename='js/app.js') }}"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>登录界面</h1>
+    </div>
+    <div class="login">
+        <div class="username">
+            <p>账号：</p>
+            <input type="text" id="username" autofocus>
+        </div>
+        <div class="password">
+            <p>密码：</p>
+            <input type="password" id="password">
+        </div>
+        <button onclick="validateForm()">登录</button>
+    </div>
+</body>
+</html>

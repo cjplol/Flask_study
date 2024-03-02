@@ -1,0 +1,37 @@
+div{
+    padding: 10px 0px;
+}
+
+.header{
+    text-align:center;
+    background-color: #215;
+    padding: 20px 0;
+    color: #fff;
+}
+
+.login{
+    text-align: center;
+    background-color: yellow;
+}
+
+.username,.password{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    height: 50%; /* 宽度为父容器的50% */
+}
+
+button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            margin-right: 10px;
+            border-radius: 4px;
+            width: 5%;
+        }
+button:hover {
+    background-color: #4cae4c;
+}
